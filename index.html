@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- This line tells the browser that this is an HTML5 document. -->
+<html lang="en">
+<!-- The <html> tag is the main container for the whole page. The `lang` attribute says the language is English. -->
+<head>
+    <!-- The <head> section contains information about the page that isn't displayed on the page itself. -->
+    <meta charset="UTF-8">
+    <!-- This tag specifies the character set for the document, so all characters display correctly. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- This is super important! It makes the website look good on phones and tablets by setting the viewport to the device's width. -->
+    <title>Stillness Bloom</title>
+    <!-- This is the title that appears in the browser tab. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- This line loads Tailwind CSS, a special tool that lets us add cool styles by just using class names. It makes styling the website a lot easier! -->
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;700&display=swap');
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f7f3f0;
+        color: #333;
+    }
+
+    .font-playfair {
+        font-family: 'Playfair Display', serif;
+    }
+</style>
+
+</head>
+<body class="antialiased">
+    <!-- The <body> is where all the content of the website lives. The `antialiased` class smooths out the fonts. -->
+    <div class="min-h-screen flex flex-col items-center justify-center py-12 px-4">
+        <!-- This is a container that centers all the content on the page and adds some padding around it. -->
+        <header class="text-center mb-12">
+            <!-- This is the header section of the blog. The classes center the text and add some space at the bottom. -->
+            <h1 class="text-5xl md:text-6xl font-playfair text-gray-800 tracking-wider">Stillness Bloom</h1>
+            <!-- The main title of your blog. The classes make it really big and use the special font. -->
+            <p class="mt-4 text-xl md:text-2xl font-light text-gray-600">Finding beauty in quiet moments.</p>
+            <!-- A subtitle or motto for your blog. -->
+        </header>
+        
+        <!-- This is the navigation bar, placed right after the header. -->
+        <nav class="w-full max-w-3xl flex justify-center space-x-8 mb-8">
+            <!-- The `<nav>` tag is used for navigation links. -->
+            <!-- We've set the width and max-width to match the blog posts below. -->
+            <!-- The `flex justify-center` classes center the links. -->
+            <!-- The `space-x-8` class adds space between the links horizontally. -->
+            <a href="/MeditationApp.html" class="text-gray-600 hover:text-gray-800 font-medium transition-colors duration-200">Meditate</a>
+            <!-- These are the navigation links. `href="#"` means they don't go anywhere yet. -->
+            <a href="#" class="text-gray-600 hover:text-gray-800 font-medium transition-colors duration-200">Read</a>
+            <a href="#" class="text-gray-600 hover:text-gray-800 font-medium transition-colors duration-200">Shop</a>
+            <a href="#" class="text-gray-600 hover:text-gray-800 font-medium transition-colors duration-200">Contact</a>
+        </nav>
+
+        <main class="w-full max-w-3xl">
+            <!-- This is the main section where all the blog posts will go. It's set to take up the full width, but with a maximum size to keep the text readable. -->
+            <!-- Blog Post 1 -->
+            <article class="bg-white rounded-xl shadow-lg p-8 mb-8 transition-transform transform hover:scale-105 duration-300">
+                <!-- Each blog post is an `<article>`. The classes give it a white background, rounded corners, a shadow, and a cool zoom effect when you hover over it. -->
+                <div class="flex items-center justify-between mb-4">
+                    <!-- This div holds the title and date, and uses "flex" to put them on opposite sides. -->
+                    <h2 class="text-3xl font-playfair text-gray-800">The Gentle Art of Doing Nothing</h2>
+                    <!-- The title of the blog post. -->
+                    <span class="text-sm text-gray-500">September 24, 2025</span>
+                    <!-- The date of the blog post. -->
+                </div>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    <!-- The opening paragraph of the blog post. -->
+                    In a world that constantly demands more, there is a profound peace to be found in the art of stillness. It's not about idleness, but about intentional pause. To sit with a cup of tea, to watch the rain fall, to simply exist without a purpose. This is where the mind unwinds and the soul finds its rhythm.
+                </p>
+                <a href="/blogs/blog1.html" class="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200">Read More →</a>
+                <!-- This is the "Read More" link. The `href="#"` means it doesn't go anywhere for now. -->
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="bg-white rounded-xl shadow-lg p-8 mb-8 transition-transform transform hover:scale-105 duration-300">
+                <!-- Another blog post, styled just like the first one. -->
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-3xl font-playfair text-gray-800">A Walk in the Woods: My Meditation</h2>
+                    <span class="text-sm text-gray-500">September 18, 2025</span>
+                </div>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    The forest has always been my sanctuary. The rustle of leaves, the earthy scent of damp soil, the dappled sunlight filtering through the canopy—it's a symphony for the senses. Each step is a form of meditation, a quiet conversation with nature. It's a reminder that even in a bustling world, serenity is just a few steps away.
+                </p>
+                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200">Read More →</a>
+            </article>
+
+            <!-- Blog Post 3 -->
+            <article class="bg-white rounded-xl shadow-lg p-8 mb-8 transition-transform transform hover:scale-105 duration-300">
+                <!-- And a third blog post. You can copy and paste this section to add more! -->
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-3xl font-playfair text-gray-800">Cultivating Joy in Small Things</h2>
+                    <span class="text-sm text-gray-500">September 12, 2025</span>
+                </div>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    True happiness isn't a grand destination; it's a collection of small, beautiful moments. A perfect cup of coffee in the morning, a spontaneous smile from a stranger, the warmth of the sun on your skin. By paying attention to these tiny details, we can cultivate a garden of joy that blooms no matter the season.
+                </p>
+                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200">Read More →</a>
+            </article>
+        </main>
+
+        <footer class="mt-12 text-center text-gray-500 text-sm">
+            <!-- This is the footer at the bottom of the page. -->
+            <p>&copy; 2025 Stillness Bloom. All rights reserved.</p>
+            <!-- The copyright notice. -->
+        </footer>
+    </div>
+</body>
+</html>

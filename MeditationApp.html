@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meditation App</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #f0f8ff;
+      padding: 2rem;
+    }
+
+    .circle {
+      margin: 4rem auto;
+      width: 100px;
+      height: 100px;
+      background: #87cefa;
+      border-radius: 50%;
+      transition: transform 7s ease-in-out;
+    }
+
+    .circle.expand {
+      transform: scale(2);
+    }
+
+    .circle.contract {
+      transform: scale(1);
+    }
+
+    #instruction {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Meditation Timer</h1>
+  <label for="duration">Meditation Duration (minutes):</label>
+  <input type="number" id="duration" min="1" value="1" />
+  <button onclick="startMeditation()">Start</button>
+
+  <div class="circle" id="circle"></div>
+  <p id="instruction">Ready to begin</p>
+
+  <!-- Replace these with actual audio file URLs or base64-encoded audio if needed -->
+  <audio id="inhaleSound" src="inhale.mp3"></audio>
+  <audio id="exhaleSound" src="exhale.mp3"></audio>
+
+  <script>
+    const circle = document.getElementById("circle");
+    const instruction = document.getElementById("instruction");
+    const inhaleSound = document.getElementById("inhaleSound");
+    const exhaleSound = document.getElementById("exhaleSound");
+
+    function startMeditation() {
+      const minutes = parseInt(document.getElementById("duration").value);
+      const totalTime = minutes * 60 * 1000;
+      let elapsed = 0;
+
+      function cycle() {
+        // Inhale
+        instruction.textContent = "Breathe In";
+        circle.classList.add("expand");
+        circle.classList.remove("contract");
+        inhaleSound.play();
+        setTimeout(() => {
+          // Hold after inhale
+          instruction.textContent = "Hold";
+          setTimeout(() => {
+            // Exhale
+            instruction.textContent = "Breathe Out";
+            circle.classList.remove("expand");
+            circle.classList.add("contract");
+            exhaleSound.play();
+            setTimeout(() => {
+              // Hold after exhale
+              instruction.textContent = "Hold";
+              setTimeout(() => {
+                elapsed += 19000;
+                if (elapsed < totalTime) {
+                  cycle();
+                } else {
+                  instruction.textContent = "Meditation Complete";
+                }
+              }, 3000);
+            }, 6000);
+          }, 3000);
+        }, 7000);
+      }
+
+      cycle();
+    }
+  </script>
+</body>
+</html>
